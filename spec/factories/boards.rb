@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :board do
-    title "MyString"
+    title "Board Name"
   end
 
 end

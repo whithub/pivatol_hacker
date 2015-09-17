@@ -1,1 +1,7 @@
-<h1>This the (root) Board Index Page</h1>
+<h2 class="page-title">Existing Boards</h2>
+
+<ul class='board-titles'>
+  <% @boards.each do |board| %>
+    <%= render partial: 'board', locals: {title: board.title} %>
+  <% end %>
+</ul>
