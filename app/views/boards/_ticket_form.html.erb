@@ -1,4 +1,4 @@
-<%= form_for ([@board, Ticket.new]) do |f| %>
+<%= form_for [@board, Ticket.new], url: board_tickets_path(@board), method: :post do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 

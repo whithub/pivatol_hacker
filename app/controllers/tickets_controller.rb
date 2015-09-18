@@ -13,9 +13,7 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = Ticket.new(ticket_params)
-    @ticket.board_id = @board.id
-    # @ticket = @board.tickets.new(ticket_params)
+    @ticket = @board.tickets.new(ticket_params)
 
     if @ticket.save
       redirect_to board_path(@board), notice: "Ticket Created"
@@ -41,7 +39,7 @@ class TicketsController < ApplicationController
   end
 
   def load_board
-    @board = Board.find_by(title: params[:board_id])
+    @board = Board.find(params[:board_id])
   end
 
   def set_ticket

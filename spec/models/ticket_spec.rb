@@ -5,6 +5,7 @@ RSpec.describe Ticket, type: :model do
   let(:ticket) { Ticket.create(name: "Ticket title", description: "Ticket description", status: 0) }
 
   it { is_expected.to validate_presence_of(:name) }
+  it { should belong_to(:board) }
 
   it "is invalid without a title" do
     ticket.name = ""
