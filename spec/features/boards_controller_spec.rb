@@ -1,16 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe BoardsController, type: :controller do
+RSpec.describe BoardsController, type: :feature do
 
   before(:each) do
-    FactoryGirl.create(:board, title: 'Board Title #1')
-    FactoryGirl.create(:board, title: 'Board Title #2')
+    FactoryGirl.create(:board, title: 'Board title #1')
+    FactoryGirl.create(:board, title: 'Board title #2')
     visit root_path
+    click_on "Enter"
   end
 
   it "displays all existing boards" do
-    expect(page).to have_content('Board Title #1')
-    expect(page).to have_content('Board Title #2')
+    expect(page).to have_content('Existing Boards')
+    expect(page).to have_content('Board title #1')
+    expect(page).to have_content('Board title #2')
   end
 
   xit "can be created" do

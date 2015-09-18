@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: [:destroy]
   def index
     @boards = Board.all
   end
@@ -21,10 +22,19 @@ class BoardsController < ApplicationController
     end
   end
 
+  def destroy
+    @board.destroy!
+    redirect_to boards_path
+  end
+
+
   private
 
   def board_params
     params.require(:board).permit(:title)
   end
 
+  def set_board
+    @board = Board.find(params[:id])
+  end
 end

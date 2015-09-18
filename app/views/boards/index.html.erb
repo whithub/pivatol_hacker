@@ -3,6 +3,7 @@
 <ul class='board-titles'>
   <% @boards.each do |board| %>
     <%= render partial: 'board', locals: {title: board.title} %>
+    <%= link_to "Delete", board_path(board), method: :delete %>
   <% end %>
 </ul>
 
