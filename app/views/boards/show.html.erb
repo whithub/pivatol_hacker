@@ -1,6 +1,7 @@
 <h1><%= @board.title %></h1>
 
-<%# @board.tickets.each do |ticket| %>
-  <%#= ticket.name %>
-  <%#= ticket.description %>
-<%# end %>
+<% @board.tickets.each do |ticket| %>
+  <%= ticket.name %>
+  <%= ticket.description %>
+
+<% end %>
