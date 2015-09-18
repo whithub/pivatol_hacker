@@ -66,13 +66,11 @@ RSpec.describe BoardsController, type: :feature do
     expect(page).to_not have_content('Idea #2 Description')
   end
 
-  xit "can be deleted" do
+  it "can be deleted" do
     first(:link, "Delete").click
 
-    expect(current_path).to eq('/')
-    expect(page).to have_content('First idea title')
-    expect(page).to have_content('Idea #1 Description')
-    expect(page).to_not have_content('Second idea title')
-    expect(page).to_not have_content('Idea #2 Description')
+    expect(current_path).to eq('/boards')
+    expect(page).to_not have_content('Board title #1')
+    expect(page).to have_content('Board title #2')
   end
 end
