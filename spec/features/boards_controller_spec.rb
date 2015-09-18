@@ -27,20 +27,24 @@ RSpec.describe BoardsController, type: :feature do
     # expect(page).to have_content("Board was created.")
   end
 
-  xit "cannot be created without a title" do
-    fill_in "New Board Title", with: ""
-    click_on "Create"
+  it "cannot be created without a title" do
+    click_on "Create A New Board"
+    fill_in "Board Title", with: ""
+    click_on "Create Board"
 
-    error_message = page.driver.browser.switch_to.alert
-    expect(error_message.text).to eq("Need a title in order to create the board!")
+    expect(page).to have_content("Title can't be blank")
+    expect(page).to have_button("Create Board")
+    # expect(current_path).to eq(new_board_path)
   end
 
-  xit "cannot be created without a duplicate title" do
-    fill_in "New Board Title", with: "Board Title #1"
-    click_on "Create"
+  it "cannot be created without a duplicate title" do
+    click_on "Create A New Board"
+    fill_in "Board Title", with: "Board title #1"
+    click_on "Create Board"
 
-    error_message = page.driver.browser.switch_to.alert
-    expect(error_message.text).to eq("Sorry, board could not be created. That title already exists.")
+    expect(page).to have_content("Title has already been taken")
+    expect(page).to have_button("Create Board")
+    # expect(current_path).to eq(new_board_path)
   end
 
   xit "can be edited" do
