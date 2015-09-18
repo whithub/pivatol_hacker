@@ -245,6 +245,16 @@
         null,
         null
       ],
+      "/Users/whitney/Desktop/turing/4_module/projects/pivatol_hacker/spec/factories/tickets.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/whitney/Desktop/turing/4_module/projects/pivatol_hacker/config/routes.rb": [
         1,
         null,
@@ -450,12 +460,60 @@
       ],
       "/Users/whitney/Desktop/turing/4_module/projects/pivatol_hacker/app/models/board.rb": [
         1,
+        1,
         null,
         1,
         null,
         null
+      ],
+      "/Users/whitney/Desktop/turing/4_module/projects/pivatol_hacker/spec/models/ticket_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        3,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/whitney/Desktop/turing/4_module/projects/pivatol_hacker/app/models/ticket.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1442597782
+    "timestamp": 1442599877
   }
 }
