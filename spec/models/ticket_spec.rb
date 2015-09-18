@@ -17,7 +17,7 @@ RSpec.describe Ticket, type: :model do
   end
 
   it "is valid without a status; defaults to backlog" do
-    #need to test enum... backlog
+    #TODO need to test enum... backlog
 
     ticket_2 = Ticket.create(name: "Ticket title #2")
     expect(ticket_2).to be_valid

@@ -18,13 +18,10 @@ RSpec.describe BoardsController, type: :feature do
   it "can be created" do
     click_on "Create A New Board"
     fill_in "Board Title", with: "Brand new board!"
-    # fill_in "New Board Description", with: "Description of brand new board."
     click_on "Create Board"
-    # save_and_open_page
 
     expect(current_path).to eq(boards_path)
     expect(page).to have_content('Brand new board!')
-    # expect(page).to have_content("Board was created.")
   end
 
   it "cannot be created without a title" do
@@ -37,7 +34,7 @@ RSpec.describe BoardsController, type: :feature do
     # expect(current_path).to eq(new_board_path)
   end
 
-  it "cannot be created without a duplicate title" do
+  it "cannot be created with a duplicate title" do
     click_on "Create A New Board"
     fill_in "Board Title", with: "Board title #1"
     click_on "Create Board"
