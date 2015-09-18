@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-18T10:45:22-06:00">2015-09-18T10:45:22-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-18T10:55:09-06:00">2015-09-18T10:55:09-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">71.23%</span></span>
+    (<span class="covered_percent"><span class="red">77.93%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.74
+         0.82
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>27</b> files in total.
-    <b>146</b> relevant lines. 
-    <span class="green"><b>104</b> lines covered</span> and
-    <span class="red"><b>42</b> lines missed </span>
+    <b>145</b> relevant lines. 
+    <span class="green"><b>113</b> lines covered</span> and
+    <span class="red"><b>32</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#8e06e4f7d08a575a0278685b7657dbe1c3fc9ce9" class="src_link" title="app/controllers/boards_controller.rb">app/controllers/boards_controller.rb</a></td>
-        <td class="red strong">50.0 %</td>
+        <td class="red strong">72.73 %</td>
         <td>40</td>
         <td>22</td>
-        <td>11</td>
-        <td>11</td>
-        <td>0.5</td>
+        <td>16</td>
+        <td>6</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -272,12 +272,12 @@
       
       <tr>
         <td class="strong"><a href="#72576a650348c2599c59f56eca1a4f75d8b08367" class="src_link" title="spec/features/boards_controller_spec.rb">spec/features/boards_controller_spec.rb</a></td>
-        <td class="red strong">35.42 %</td>
+        <td class="red strong">44.68 %</td>
         <td>74</td>
-        <td>48</td>
-        <td>17</td>
-        <td>31</td>
-        <td>0.4</td>
+        <td>47</td>
+        <td>21</td>
+        <td>26</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -387,11 +387,11 @@
         <div class="source_table" id="8e06e4f7d08a575a0278685b7657dbe1c3fc9ce9">
   <div class="header">
     <h3>app/controllers/boards_controller.rb</h3>
-    <h4><span class="red">50.0 %</span> covered</h4>
+    <h4><span class="red">72.73 %</span> covered</h4>
     <div>
       <b>22</b> relevant lines. 
-      <span class="green"><b>11</b> lines covered</span> and
-      <span class="red"><b>11</b> lines missed.</span>
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -416,8 +416,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">    @boards = Board.all</code>
         </li>
@@ -464,8 +464,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">    @board = Board.new</code>
         </li>
@@ -488,20 +488,20 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
           <code class="ruby">    @board = Board.new(board_params)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">    if @board.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to boards_path #board_path(@board)</code>
         </li>
@@ -596,8 +596,8 @@
           <code class="ruby">  def board_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
           
           <code class="ruby">    params.require(:board).permit(:title)</code>
         </li>
@@ -2097,11 +2097,11 @@
         <div class="source_table" id="72576a650348c2599c59f56eca1a4f75d8b08367">
   <div class="header">
     <h3>spec/features/boards_controller_spec.rb</h3>
-    <h4><span class="red">35.42 %</span> covered</h4>
+    <h4><span class="red">44.68 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>31</b> lines missed.</span>
+      <b>47</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>26</b> lines missed.</span>
     </div>
   </div>
   
@@ -2138,26 +2138,26 @@
           <code class="ruby">  before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">    FactoryGirl.create(:board, title: &#39;Board title #1&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">    FactoryGirl.create(:board, title: &#39;Board title #2&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">    visit root_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
           <code class="ruby">    click_on &quot;Enter&quot;</code>
         </li>
@@ -2183,67 +2183,67 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    save_and_open_page</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Existing Boards&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;Existing Boards&#39;)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Board title #1&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;Board title #1&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
           <code class="ruby">    expect(page).to have_content(&#39;Board title #2&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">  xit &quot;can be created&quot; do</code>
+          <code class="ruby">  it &quot;can be created&quot; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
           <code class="ruby">    click_on &quot;Create A New Board&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    fill_in &quot;New Board Title&quot;, with: &quot;Brand New Board!&quot;</code>
+          <code class="ruby">    fill_in &quot;Board Title&quot;, with: &quot;Brand new board!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    # fill_in &quot;New Board Description&quot;, with: &quot;Description of brand new board.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &quot;Create Board&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">    click_on &quot;Create&quot;</code>
+          <code class="ruby">    # save_and_open_page</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -2252,22 +2252,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    expect(page).to have_content(&#39;Brand New Board!&#39;)</code>
+          <code class="ruby">    expect(current_path).to eq(boards_path)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    # expect(page).to have_content(&quot;Description of brand new board.&quot;)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Brand new board!&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">    expect(current_path).to eq(&#39;/boards/3&#39;)</code>
+          <code class="ruby">    # expect(page).to have_content(&quot;Board was created.&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">

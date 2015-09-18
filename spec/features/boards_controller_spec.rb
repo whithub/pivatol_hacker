@@ -15,15 +15,16 @@ RSpec.describe BoardsController, type: :feature do
     expect(page).to have_content('Board title #2')
   end
 
-  xit "can be created" do
+  it "can be created" do
     click_on "Create A New Board"
-    fill_in "New Board Title", with: "Brand New Board!"
+    fill_in "Board Title", with: "Brand new board!"
     # fill_in "New Board Description", with: "Description of brand new board."
-    click_on "Create"
+    click_on "Create Board"
+    # save_and_open_page
 
-    expect(page).to have_content('Brand New Board!')
-    # expect(page).to have_content("Description of brand new board.")
-    expect(current_path).to eq('/boards/3')
+    expect(current_path).to eq(boards_path)
+    expect(page).to have_content('Brand new board!')
+    # expect(page).to have_content("Board was created.")
   end
 
   xit "cannot be created without a title" do
