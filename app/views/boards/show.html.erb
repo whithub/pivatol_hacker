@@ -1,5 +1,9 @@
 <h1><%= @board.title %></h1>
 
+<%#= link_to "Make new Ticket", new_board_ticket_path(@board) %>
+
+<%= render partial: 'ticket_form' %>
+
 <% @board.tickets.each do |ticket| %>
   <%= ticket.name %>
   <%= ticket.description %>

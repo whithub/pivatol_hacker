@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:destroy]
+
   def index
     @boards = Board.all
   end
@@ -10,6 +11,7 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @tickets = @board.tickets
   end
 
   def create

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TicketsController, type: :features do
+RSpec.describe TicketsController, type: :feature do
 
   before(:each) do
     @board = Board.create(title: "Board-One")
@@ -21,7 +21,7 @@ RSpec.describe TicketsController, type: :features do
     expect(page).to have_content('Second awesome ticket description')
   end
 
-  xit "can be created" do
+  it "can be created" do
     click_on "Board-one"
     fill_in "Ticket name", with: "Brand new ticket!"
     fill_in "Ticket description", with: "Description of what this ticket entails"
