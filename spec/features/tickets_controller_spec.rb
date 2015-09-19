@@ -14,7 +14,7 @@ RSpec.describe TicketsController, type: :feature do
   it "displays all existing tickets" do
     click_on "Board-one"
 
-    expect(current_path).to eq('/boards/Board-One')
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to have_content('Board-One')
     expect(page).to have_content('Ticket Name #1')
     expect(page).to have_content('Ticket Name #2')
@@ -23,49 +23,49 @@ RSpec.describe TicketsController, type: :feature do
 
   it "can be created" do
     click_on "Board-one"
-    fill_in "Ticket name", with: "Brand new ticket!"
-    fill_in "Ticket description", with: "Description of what this ticket entails"
+    fill_in "Ticket Name", with: "Brand new ticket!"
+    fill_in "Ticket Description", with: "Description of what this ticket entails"
     click_on "Create Ticket"
 
-    expect(current_path).to eq('/boards/Board-One')
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to have_content('Brand new ticket!')
     expect(page).to have_content('Description of what this ticket entails')
   end
 
-  xit "cannot be created without a title" do
+  it "cannot be created without a title" do
     click_on "Board-one"
-    fill_in "Ticket description", with: "Description of what this ticket entails"
+    fill_in "Ticket Description", with: "Description of what this ticket entails"
     click_on "Create Ticket"
 
     expect(page).to have_content("Name can't be blank")
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to have_button("Create Ticket")
-    # expect(current_path).to eq(new_board_path)
   end
 
-  xit "cannot be created with a duplicate title" do
+  it "cannot be created with a duplicate title" do
     click_on "Board-one"
-    fill_in "Ticket name", with: "Ticket Name #1"
-    fill_in "Ticket description", with: "Description of what this ticket entails"
+    fill_in "Ticket Name", with: "Ticket Name #1"
+    fill_in "Ticket Description", with: "Description of what this ticket entails"
     click_on "Create Ticket"
 
     expect(page).to have_content("Name has already been taken")
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to have_button("Create Ticket")
-    # expect(current_path).to eq(new_board_path)
   end
 
-  xit "can be created without a description, defaults to blank" do
+  it "can be created without a description, defaults to blank" do
     click_on "Board-one"
-    fill_in "Ticket name", with: "Ticket without a description"
+    fill_in "Ticket Name", with: "Ticket without a description"
     click_on "Create Ticket"
 
-    expect(current_path).to eq('/boards/Board-One')
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to have_content('Ticket without a description')
   end
 
   xit "default status to backlog" do
     click_on "Board-one"
-    fill_in "Ticket name", with: "Ticket Name #3"
-    fill_in "Ticket description", with: "Description of what this ticket entails"
+    fill_in "Ticket Name", with: "Ticket Name #3"
+    fill_in "Ticket Description", with: "Description of what this ticket entails"
     click_on "Create Ticket"
 
     #expect it's location to be in backlog column...find ticket, grab its status...
@@ -77,11 +77,11 @@ RSpec.describe TicketsController, type: :feature do
 
     expect(page).to have_content("Edit Ticket:")
 
-    find_field('Ticket name').value.should eq('Title Name #1')
-    find_field('Ticket description').should have_content('Real good ticket description')
+    find_field('Ticket Name').value.should eq('Title Name #1')
+    find_field('Ticket Description').should have_content('Real good ticket description')
 
-    fill_in 'Ticket name', with: 'Edited ticket name'
-    fill_in 'Ticket description', with: 'Edited ticket description'
+    fill_in 'Ticket Name', with: 'Edited ticket name'
+    fill_in 'Ticket Description', with: 'Edited ticket description'
     click_on "Update Ticket"
 
     expect(current_path).to eq('/boards/Board-One')

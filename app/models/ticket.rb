@@ -1,6 +1,6 @@
 class Ticket < ActiveRecord::Base
   # include AASM
-  validates_presence_of :name
+  validates :name, presence: true, uniqueness: { :case_sensitive => false }
 
   belongs_to :board
 

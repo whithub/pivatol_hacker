@@ -5,7 +5,10 @@
 <%= render partial: 'ticket_form' %>
 
 <% @board.tickets.each do |ticket| %>
-  <%= ticket.name %>
-  <%= ticket.description %>
+
+  <li>
+    <%= ticket.name %>:
+    <%= ticket.description %>
+  </li>
 
 <% end %>

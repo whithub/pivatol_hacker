@@ -18,8 +18,7 @@ class TicketsController < ApplicationController
     if @ticket.save
       redirect_to board_path(@board), notice: "Ticket Created"
     else
-      flash.now[:errors] = @ticket.errors.full_messages.join(", ")
-      render :new
+      redirect_to board_path(@board), notice: @ticket.errors.full_messages.join(", ")
     end
   end
 

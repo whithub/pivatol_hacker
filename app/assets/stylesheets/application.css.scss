@@ -21,4 +21,5 @@
   height: 100%;
   width: 100%;
   @include span-columns(12);
+  border: 2px solid red;
 }
