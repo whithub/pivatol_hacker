@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe TicketsController, type: :feature do
 
   before(:each) do
-    @board = Board.create(title: "Board-One")
-    @ticket = @board.tickets.create(name: 'Ticket Name #1', description: 'Real good ticket description')
-    @ticket_2 = @board.tickets.create(name: 'Ticket Name #2', description: 'Second awesome ticket description')
+    @board = Board.create!(title: "Board-One")
+    @ticket = @board.tickets.create!(name: 'Ticket Name #1', description: 'Real good ticket description')
+    @ticket_2 = @board.tickets.create!(name: 'Ticket Name #2', description: 'Second awesome ticket description')
 
     visit root_path
     click_on "Enter"
