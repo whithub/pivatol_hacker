@@ -22,7 +22,80 @@ RSpec.describe Ticket, type: :model do
 
     ticket_2 = Ticket.create(name: "Ticket title #2")
     expect(ticket_2).to be_valid
-    expect(ticket_2.status).to eq(0)
+    expect(ticket_2.status).to eq('backlog')
+  end
+
+  describe 'status' do
+    subject { Ticket.new }
+
+    it { is_expected.to respond_to(:status) }
+
+    describe ':backlog' do
+      it 'is the initial state' do
+        expect(subject.backlog?).to eql(true)
+      end
+
+      it 'can be transitioned to :current_sprint' do
+        expect { subject.ready }.to change(subject, :current_sprint?).from(false).to(true)
+      end
+
+      xit 'cannot be transitioned to :in_progress' do
+
+        expect { subject.ready }.to raise_error(AASM::InvalidTransition)
+      end
+
+      xit 'cannot be transitioned to :done' do
+        expect { subject.ready }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+
+    describe ':current_sprint' do
+      before { subject.status = :current_sprint }
+
+      it 'can be transitioned back to :backlog' do
+        expect { subject.cancel }.to change(subject, :backlog?).from(false).to(true)
+      end
+
+      it 'can be transitioned to :in_progress' do
+        expect { subject.start }.to change(subject, :in_progress?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned to :done' do
+        expect { subject.complete }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+
+    describe ':in_progress' do
+      before { subject.status = :in_progress }
+
+      it 'cannot be transitioned back to :backlog' do
+        expect { subject.cancel }.to raise_error(AASM::InvalidTransition)
+      end
+
+      it 'can be transitioned back to :current_sprint' do
+        expect { subject.stop }.to change(subject, :current_sprint?).from(false).to(true)
+      end
+
+      it 'can be transitioned to :done' do
+        expect { subject.complete }.to change(subject, :done?).from(false).to(true)
+      end
+    end
+
+    describe ':done' do
+      before { subject.status = :done }
+
+      it 'cannot be transitioned back to :backlog' do
+        expect { subject.cancel }.to raise_error(AASM::InvalidTransition)
+      end
+
+      it 'cannot be transitioned back to :current_sprint' do
+        expect { subject.stop }.to raise_error(AASM::InvalidTransition)
+      end
+
+      it 'can be transitioned back to :in_progress' do
+        expect { subject.restart }.to change(subject, :in_progress?).from(false).to(true)
+      end
+    end
   end
 
 
