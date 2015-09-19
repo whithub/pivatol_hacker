@@ -102,4 +102,65 @@ RSpec.describe TicketsController, type: :feature do
     expect(page).to_not have_content('Ticket Name #1')
     expect(page).to have_content('Ticket Name #2')
   end
+
+  it "in backlog state can only move to current sprint" do
+    click_on "Board-one"
+
+    expect(page).to have_content('Move to Current Sprint')
+    expect(page).to_not have_content('Move to In Progress')
+    expect(page).to_not have_content('Move to Done')
+
+    first(:link, "Move to Current Sprint").click
+
+    expect(page).to have_content('Move Back to Backlog')
+    expect(page).to have_content('Move to In Progress')
+    expect(page).to_not have_content('Move to Done')
+  end
+
+  it "in current sprint state can only move to in_progress or backlog" do
+    click_on "Board-one"
+    first(:link, "Move to Current Sprint").click
+    first(:link, "Move to In Progress").click
+
+    expect(page).to have_content('Move Back to Current Sprint')
+    expect(page).to have_content('Move to Done')
+    expect(page).to_not have_content('Move to In Progress')
+    expect(page).to_not have_content('Move Back to Backlog')
+
+    first(:link, "Move Back to Current Sprint").click
+    first(:link, "Move Back to Backlog").click
+
+    expect(page).to have_content('Move to Current Sprint')
+    expect(page).to_not have_content('Move to In Progress')
+    expect(page).to_not have_content('Move to Done')
+  end
+
+  it "in in_progress state can only move to done or current sprint" do
+    click_on "Board-one"
+    first(:link, "Move to Current Sprint").click
+    first(:link, "Move to In Progress").click
+    first(:link, "Move to Done").click
+
+    expect(page).to have_content('Move Back to In Progress')
+    expect(page).to_not have_content('Move to In Progress')
+    expect(page).to_not have_content('Move Back to Backlog')
+
+    first(:link, "Move Back to In Progress").click
+    first(:link, "Move Back to Current Sprint").click
+
+    expect(page).to have_content('Move to In Progress')
+    expect(page).to have_content('Move Back to Backlog')
+    expect(page).to_not have_content('Move to Done')
+  end
+
+  it "in done state can only move to in_progress" do
+    click_on "Board-one"
+    first(:link, "Move to Current Sprint").click
+    first(:link, "Move to In Progress").click
+    first(:link, "Move to Done").click
+
+    expect(page).to have_content('Move Back to In Progress')
+    expect(page).to_not have_content('Move Back to Current Sprint')
+    expect(page).to_not have_content('Move Back to Backlog')
+  end
 end

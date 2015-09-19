@@ -39,13 +39,12 @@ RSpec.describe Ticket, type: :model do
         expect { subject.ready }.to change(subject, :current_sprint?).from(false).to(true)
       end
 
-      xit 'cannot be transitioned to :in_progress' do
-
-        expect { subject.ready }.to raise_error(AASM::InvalidTransition)
+      it 'cannot be transitioned to :in_progress' do
+        expect { subject.start }.to raise_error(AASM::InvalidTransition)
       end
 
-      xit 'cannot be transitioned to :done' do
-        expect { subject.ready }.to raise_error(AASM::InvalidTransition)
+      it 'cannot be transitioned to :done' do
+        expect { subject.complete }.to raise_error(AASM::InvalidTransition)
       end
     end
 
@@ -97,8 +96,6 @@ RSpec.describe Ticket, type: :model do
       end
     end
   end
-
-
 
 
 end

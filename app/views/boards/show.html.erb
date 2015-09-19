@@ -11,8 +11,17 @@
     <%= ticket.description %>
     <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
     <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
-  </li>
 
-
+    <% if ticket.backlog? %>
+      <%= link_to "Move to Current Sprint", ready_board_ticket_path(@board, ticket) %>
+    <% elsif ticket.current_sprint? %>
+      <%= link_to "Move Back to Backlog", cancel_board_ticket_path(@board, ticket) %>
+      <%= link_to "Move to In Progress", start_board_ticket_path(@board, ticket) %>
+    <% elsif ticket.in_progress? %>
+      <%= link_to "Move Back to Current Sprint", stop_board_ticket_path(@board, ticket) %>
+      <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
+    <% elsif ticket.done? %>
+      <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
+    <% end %>  </li>
 
 <% end %>

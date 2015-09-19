@@ -1,11 +1,12 @@
 class Ticket < ActiveRecord::Base
-  include AASM
+
   validates :name, presence: true, uniqueness: { :case_sensitive => false }
 
   belongs_to :board
 
   enum status: %w(backlog current_sprint in_progress done)   #[:backlog, :current_sprint, :in_progress, :done]
 
+  include AASM
   aasm column: :status, enum: true do
     state :backlog, :initial => true
     state :current_sprint
@@ -35,24 +36,24 @@ class Ticket < ActiveRecord::Base
     event :restart do
       transitions from: :done, to: :in_progress
     end
-
   end
 
-  def update_ticket_status(params)
-    case params[:status]
-      when 'ready'
-        self.ready!
-      when 'cancel'
-        self.cancel!
-      when 'start'
-        self.start!
-      when 'stop'
-        self.stop!
-      when 'complete'
-        self.complete!
-      when 'restart'
-        self.restart!
-    end
-  end
+
+  # def update_ticket_status(params)
+  #   case params[:status]
+  #     when 'ready'
+  #       self.ready!
+  #     when 'cancel'
+  #       self.cancel!
+  #     when 'start'
+  #       self.start!
+  #     when 'stop'
+  #       self.stop!
+  #     when 'complete'
+  #       self.complete!
+  #     when 'restart'
+  #       self.restart!
+  #   end
+  # end
 
 end

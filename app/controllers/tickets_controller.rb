@@ -39,10 +39,53 @@ class TicketsController < ApplicationController
     redirect_to board_path(@board)
   end
 
+  def ready
+    set_ticket
+    @ticket.ready!
+    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now in Current Sprint."
+  end
+
+  def cancel
+    set_ticket
+    @ticket.cancel!
+    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' has been cancelled."
+  end
+
+  def start
+    set_ticket
+    @ticket.start!
+    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now In Progress."
+    # if @ticket.save
+    #   redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' has been started."
+    # else
+    #   error
+    # end
+  end
+
+  def stop
+    set_ticket
+    @ticket.stop!
+    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is back in Current Sprint."
+  end
+
+  def complete
+    set_ticket
+    @ticket.complete!
+    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now Done."
+  end
+
+  def restart
+    set_ticket
+    @ticket.restart!
+    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is back In Progress."
+  end
+
+
+
   private
 
   def ticket_params
-    params.require(:ticket).permit(:name, :description, :status)
+    params.require(:ticket).permit(:name, :description, :status_ids => [])
   end
 
   def load_board
