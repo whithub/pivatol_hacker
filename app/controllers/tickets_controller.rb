@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :load_board
-  before_action :set_ticket, only: [:show, :edit, :update]
+  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -29,6 +29,8 @@ class TicketsController < ApplicationController
   end
 
   def destroy
+    @ticket.destroy
+    redirect_to board_path(@board)
   end
 
   private

@@ -9,6 +9,9 @@
   <li>
     <%= ticket.name %>:
     <%= ticket.description %>
+    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
   </li>
+
+
 
 <% end %>

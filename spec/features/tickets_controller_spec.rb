@@ -84,17 +84,19 @@ RSpec.describe TicketsController, type: :feature do
     fill_in 'Ticket Description', with: 'Edited ticket description'
     click_on "Update Ticket"
 
-    expect(current_path).to eq('/boards/Board-One')
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to have_content('Edited ticket name')
     expect(page).to have_content('Edited ticket description')
     expect(page).to_not have_content('Ticket Name #1')
     expect(page).to_not have_content('Real good ticket description')
   end
 
-  xit "can be deleted" do
+  it "can be deleted" do
+    click_on "Board-one"
     first(:link, "Delete").click
+    # save_and_open_page
 
-    expect(current_path).to eq('/boards/Board-One')
+    expect(current_path).to eq("/boards/#{@board.id}")
     expect(page).to_not have_content('Ticket Name #1')
     expect(page).to have_content('Ticket Name #2')
   end
