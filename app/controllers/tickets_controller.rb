@@ -26,6 +26,12 @@ class TicketsController < ApplicationController
   end
 
   def update
+    if @ticket.update_attributes(ticket_params)
+      redirect_to board_path(@board), notice: 'Ticket was successfully updated.'
+    else
+      flash.now[:errors] = @idea.errors.full_messages.join(", ")
+      render :edit
+    end
   end
 
   def destroy

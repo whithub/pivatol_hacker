@@ -1,0 +1,12 @@
+<%= form_for [@board, @ticket], url: board_ticket_path(@board, @ticket), method: :put do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-field', placeholder: "Ticket Name" %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-field', placeholder: "Ticket Description" %>
+
+  <%#= f.label :status %>
+  <%#= f.select :status, [['Backlog', 0], ['Current Sprint', 1], ['In Progress', 2], ['Done',3]] %>
+
+  <%= f.submit %>
+<% end %>
