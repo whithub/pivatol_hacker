@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-20T16:33:01-06:00">2015-09-20T16:33:01-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-20T17:58:58-06:00">2015-09-20T17:58:58-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.61%</span></span>
+    (<span class="covered_percent"><span class="green">93.6%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>34</b> files in total.
-    <b>407</b> relevant lines. 
-    <span class="green"><b>381</b> lines covered</span> and
+    <b>406</b> relevant lines. 
+    <span class="green"><b>380</b> lines covered</span> and
     <span class="red"><b>26</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -322,10 +322,10 @@
       
       <tr>
         <td class="strong"><a href="#e505d106750c63d4649b143e57455ab6342d3385" class="src_link" title="spec/features/tickets_spec.rb">spec/features/tickets_spec.rb</a></td>
-        <td class="green strong">93.1 %</td>
-        <td>181</td>
-        <td>116</td>
-        <td>108</td>
+        <td class="green strong">93.04 %</td>
+        <td>180</td>
+        <td>115</td>
+        <td>107</td>
         <td>8</td>
         <td>1.3</td>
       </tr>
@@ -3817,10 +3817,10 @@
         <div class="source_table" id="e505d106750c63d4649b143e57455ab6342d3385">
   <div class="header">
     <h3>spec/features/tickets_spec.rb</h3>
-    <h4><span class="green">93.1 %</span> covered</h4>
+    <h4><span class="green">93.04 %</span> covered</h4>
     <div>
-      <b>116</b> relevant lines. 
-      <span class="green"><b>108</b> lines covered</span> and
+      <b>115</b> relevant lines. 
+      <span class="green"><b>107</b> lines covered</span> and
       <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
@@ -4716,199 +4716,193 @@
           <code class="ruby">    expect(page).to_not have_link(&#39;In Progress&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="149">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    save_and_open_page</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="150">
+        <li class="never" data-hits="" data-linenumber="149">
           
           
           <code class="ruby">    # expect(page).to_not have_link(&#39;Done&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="never" data-hits="" data-linenumber="150">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="153">
+        <li class="covered" data-hits="1" data-linenumber="152">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;in in_progress state can only move to done or current sprint&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="154">
+        <li class="covered" data-hits="1" data-linenumber="153">
           <span class="hits">1</span>
           
           <code class="ruby">    click_on &quot;Board-one&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="154">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    first(:link, &quot;Current Sprint&quot;).click</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="155">
           <span class="hits">1</span>
           
-          <code class="ruby">    first(:link, &quot;Current Sprint&quot;).click</code>
+          <code class="ruby">    first(:link, &quot;In Progress&quot;).click</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="156">
           <span class="hits">1</span>
           
-          <code class="ruby">    first(:link, &quot;In Progress&quot;).click</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="157">
-          <span class="hits">1</span>
-          
           <code class="ruby">    first(:link, &quot;Done&quot;).click</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="157">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_link(&#39;In Progress&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="159">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_link(&#39;In Progress&#39;)</code>
+          <code class="ruby">    expect(page).to_not have_link(&#39;Current Sprint&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="160">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to_not have_link(&#39;Current Sprint&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="161">
-          <span class="hits">1</span>
-          
           <code class="ruby">    expect(page).to_not have_link(&#39;Backlog&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="162">
+        <li class="never" data-hits="" data-linenumber="161">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="162">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    first(:link, &quot;In Progress&quot;).click</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="163">
           <span class="hits">1</span>
           
-          <code class="ruby">    first(:link, &quot;In Progress&quot;).click</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="164">
-          <span class="hits">1</span>
-          
           <code class="ruby">    first(:link, &quot;Current Sprint&quot;).click</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="never" data-hits="" data-linenumber="164">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="165">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_link(&#39;In Progress&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="166">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_link(&#39;In Progress&#39;)</code>
+          <code class="ruby">    expect(page).to have_link(&#39;Backlog&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="167">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_link(&#39;Backlog&#39;)</code>
+          <code class="ruby">    expect(page).to_not have_link(&#39;Done&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="168">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="168">
           
-          <code class="ruby">    expect(page).to_not have_link(&#39;Done&#39;)</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="169">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="170">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="171">
+        <li class="covered" data-hits="1" data-linenumber="170">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;in done state can only move to in_progress&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="172">
+        <li class="covered" data-hits="1" data-linenumber="171">
           <span class="hits">1</span>
           
           <code class="ruby">    click_on &quot;Board-one&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="173">
+        <li class="covered" data-hits="1" data-linenumber="172">
           <span class="hits">1</span>
           
           <code class="ruby">    first(:link, &quot;Current Sprint&quot;).click</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="174">
+        <li class="covered" data-hits="1" data-linenumber="173">
           <span class="hits">1</span>
           
           <code class="ruby">    first(:link, &quot;In Progress&quot;).click</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="175">
+        <li class="covered" data-hits="1" data-linenumber="174">
           <span class="hits">1</span>
           
           <code class="ruby">    first(:link, &quot;Done&quot;).click</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="176">
+        <li class="never" data-hits="" data-linenumber="175">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="177">
+        <li class="covered" data-hits="1" data-linenumber="176">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_link(&#39;In Progress&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="178">
+        <li class="covered" data-hits="1" data-linenumber="177">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to_not have_link(&#39;Current Sprint&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="179">
+        <li class="covered" data-hits="1" data-linenumber="178">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to_not have_link(&#39;Backlog&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="180">
+        <li class="never" data-hits="" data-linenumber="179">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="181">
+        <li class="never" data-hits="" data-linenumber="180">
           
           
           <code class="ruby">end</code>
