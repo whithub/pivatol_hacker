@@ -12,6 +12,10 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
   end
 
+  def status
+    @statuses = Tickets.statuses
+  end
+
   def create
     @ticket = @board.tickets.new(ticket_params)
 
@@ -43,6 +47,7 @@ class TicketsController < ApplicationController
     set_ticket
     @ticket.ready!
     redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now in Current Sprint."
+    # @ticker.status = 'current_print'
   end
 
   def cancel
@@ -85,7 +90,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:name, :description, :status_ids => [])
+    params.require(:ticket).permit(:name, :description, :status)
   end
 
   def load_board

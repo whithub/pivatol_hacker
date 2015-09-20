@@ -16,10 +16,12 @@
 @import "bourbon";
 @import "neat";
 
-.home-page-image {
-  background: image-url('desktop_1.jpg') no-repeat center;
+@import "home";
+@import "boards";
+@import "tickets";
+
+
+html {
   height: 100%;
   width: 100%;
-  @include span-columns(12);
-  border: 2px solid red;
 }

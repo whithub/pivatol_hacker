@@ -22,6 +22,7 @@
       <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
     <% elsif ticket.done? %>
       <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
-    <% end %>  </li>
+    <% end %>
+  </li>
 
 <% end %>

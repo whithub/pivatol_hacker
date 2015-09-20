@@ -62,12 +62,26 @@ RSpec.describe TicketsController, type: :feature do
     expect(page).to have_content('Ticket without a description')
   end
 
-  xit "default status to backlog" do
+  it "default status to backlog" do
     click_on "Board-one"
     fill_in "Ticket Name", with: "Ticket Name #3"
     fill_in "Ticket Description", with: "Description of what this ticket entails"
     click_on "Create Ticket"
 
+    expect(@ticket.status).to eq('backlog')
+    #expect it's location to be in backlog column...find ticket, grab its status...
+  end
+
+  xit "can have any status when created" do
+    click_on "Board-one"
+    fill_in "Ticket Name", with: "Ticket Name #3"
+    fill_in "Ticket Description", with: "Description of what this ticket entails"
+    select "In Progress", from: "Status"
+    click_on "Create Ticket"
+
+    expect(@ticket.reload.status).to eq('in_progress')
+    expect(page).to have_content('Move Back to Current Sprint')
+    expect(page).to have_content('Move to Done')
     #expect it's location to be in backlog column...find ticket, grab its status...
   end
 

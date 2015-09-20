@@ -6,7 +6,10 @@
   <%= f.text_area :description, placeholder: "Ticket Description" %>
 
   <%= f.label :status %>
-  <%= f.select :status, [['Backlog', 0], ['Current Sprint', 1], ['In Progress', 2], ['Done',3]] %>
+  <%= f.select :status, [['Backlog', :backlog],
+                         ['Current Sprint', :current_sprint],
+                         ['In Progress', :in_progress],
+                         ['Done', :done]], id: "ticket-status" %>
 
   <%= f.submit %>
 <% end %>
