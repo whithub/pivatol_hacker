@@ -8,9 +8,16 @@
 </head>
 <body>
 
-  <%= render partial: 'layouts/flash' %>
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+      <%= render partial: 'layouts/flash' %>
+      <div class="col-md-12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
-  <%= yield %>
 
 </body>
+
 </html>

@@ -1,3 +1,4 @@
-<li>
-  <%= link_to title.capitalize, board_path(board) %>
-</li>
+<ul>
+  <h3><%= link_to title.capitalize, board_path(board) %></h3> <%= link_to "Delete", board_path(board), method: :delete %>
+  <h4>Created On: <%= board.created_at.strftime('%D') %></h4>
+</ul>

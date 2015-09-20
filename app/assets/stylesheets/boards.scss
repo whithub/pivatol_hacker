@@ -4,23 +4,38 @@
 
 
 .all-boards {
-  background: image-url('desktop_3.jpg') no-repeat center;
-  height: 100%;
-  width: 100%;
+//  background: image-url('desktop_3.jpg') no-repeat center;
 
   h2 {
     text-align: center;
   }
 
   .block-grid-boards {
-    @include outer-container;
 
 
     li {
-      @include span-columns(3);
-      @include omega(4n);
       border: 2px solid red;
     }
   }
+}
 
+
+#new-ticket-form {
+  border: 2px solid red;
+}
+
+#backlog {
+  border: 2px solid red;
+}
+
+#current_sprint {
+  border: 2px solid red;
+}
+
+#in_progress {
+  border: 2px solid red;
+}
+
+#done {
+  border: 2px solid red;
 }

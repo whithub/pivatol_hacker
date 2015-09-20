@@ -1,14 +1,23 @@
-<div class="all-boards">
-  <h2 class="page-title">Existing Boards</h2>
+<div class="container">
+  <div class="jumbotron">
+    <%= link_to "Create A New Board", new_board_path %>
+  </div>
 
-  <ul class='block-grid-boards'>
-    <% @boards.each do |board| %>
-      <li>
-        <%= render partial: 'board', locals: {board: board, title: board.title} %>
-        <%= link_to "Delete", board_path(board), method: :delete %>
-      </li>
-    <% end %>
-  </ul>
-
-  <%= link_to "Create A New Board", new_board_path %>
+  <div class="row existing-boards">
+    <div class="col-md-12">
+      <h2 class="page-title">Existing Boards</h2>
+    </div>
+    <div class="col-md-6">
+      <% @boards.each do |board| %>
+        <ul>
+          <%= render partial: 'board', locals: {board: board, title: board.title} %>
+          <%#= link_to "Delete", board_path(board), method: :delete %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+<hr>
+  <footer class="footer">
+    <p>© whithub 2015</p>
+  </footer>
 </div>

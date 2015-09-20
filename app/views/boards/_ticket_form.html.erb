@@ -1,15 +1,15 @@
 <%= form_for [@board, Ticket.new], url: board_tickets_path(@board), method: :post do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Ticket Name" %>
+  <%= f.text_field :name, placeholder: "Ticket Name" %><br>
 
   <%= f.label :description %>
-  <%= f.text_area :description, placeholder: "Ticket Description" %>
+  <%= f.text_area :description, placeholder: "Ticket Description" %><br>
 
   <%= f.label :status %>
   <%= f.select :status, [['Backlog', :backlog],
                          ['Current Sprint', :current_sprint],
                          ['In Progress', :in_progress],
-                         ['Done', :done]], id: "ticket-status" %>
+                         ['Done', :done]], id: "ticket-status" %><br>
 
   <%= f.submit %>
 <% end %>
