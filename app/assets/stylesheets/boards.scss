@@ -3,19 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.all-boards {
-//  background: image-url('desktop_3.jpg') no-repeat center;
-
+.existing-boards {
   h2 {
     text-align: center;
   }
 
-  .block-grid-boards {
-
-
-    li {
-      border: 2px solid red;
-    }
+  .delete-board {
+    margin-top: 10%;
   }
 }
 
@@ -38,4 +32,9 @@
 
 #done {
   border: 2px solid red;
+}
+
+.footer {
+  text-align: center;
+  font-size: large;
 }
