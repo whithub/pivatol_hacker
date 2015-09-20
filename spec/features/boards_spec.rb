@@ -67,7 +67,8 @@ RSpec.describe BoardsController, type: :feature do
     first(:link, "Delete").click
 
     expect(current_path).to eq('/boards')
-    expect(page).to_not have_content('Board title #1')
-    expect(page).to have_content('Board title #2')
+    expect(page).to_not have_content('Board title #2')
+    expect(page).to have_content('Board title #1')
+    #boards displayed in descending order
   end
 end

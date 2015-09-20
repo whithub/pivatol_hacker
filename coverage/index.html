@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-20T13:06:14-06:00">2015-09-20T13:06:14-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-20T13:54:45-06:00">2015-09-20T13:54:45-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.17%</span></span>
+    (<span class="covered_percent"><span class="green">94.19%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.56
+         1.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>34</b> files in total.
-    <b>412</b> relevant lines. 
-    <span class="green"><b>388</b> lines covered</span> and
+    <b>413</b> relevant lines. 
+    <span class="green"><b>389</b> lines covered</span> and
     <span class="red"><b>24</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#8e06e4f7d08a575a0278685b7657dbe1c3fc9ce9" class="src_link" title="app/controllers/boards_controller.rb">app/controllers/boards_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>42</td>
-        <td>23</td>
-        <td>23</td>
+        <td>43</td>
+        <td>24</td>
+        <td>24</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>4.3</td>
       </tr>
       
       <tr>
@@ -133,7 +133,7 @@
       <tr>
         <td class="strong"><a href="#ba831b953683ab0675fdc3e37949d5709cc17c2a" class="src_link" title="app/models/board.rb">app/models/board.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
+        <td>7</td>
         <td>3</td>
         <td>3</td>
         <td>0</td>
@@ -311,9 +311,9 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#72576a650348c2599c59f56eca1a4f75d8b08367" class="src_link" title="spec/features/boards_controller_spec.rb">spec/features/boards_controller_spec.rb</a></td>
+        <td class="strong"><a href="#64eb7af6bf248cf518dd22865a3e825e2ef577ec" class="src_link" title="spec/features/boards_spec.rb">spec/features/boards_spec.rb</a></td>
         <td class="red strong">74.47 %</td>
-        <td>73</td>
+        <td>74</td>
         <td>47</td>
         <td>35</td>
         <td>12</td>
@@ -321,7 +321,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#3e78c9dc263ad186f57f9840e79d9d70b245ef70" class="src_link" title="spec/features/tickets_controller_spec.rb">spec/features/tickets_controller_spec.rb</a></td>
+        <td class="strong"><a href="#e505d106750c63d4649b143e57455ab6342d3385" class="src_link" title="spec/features/tickets_spec.rb">spec/features/tickets_spec.rb</a></td>
         <td class="green strong">93.33 %</td>
         <td>180</td>
         <td>120</td>
@@ -459,8 +459,8 @@
     <h3>app/controllers/boards_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -498,160 +498,160 @@
           <code class="ruby">    @boards = Board.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="19" data-linenumber="6">
+          <span class="hits">19</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @desc_boards = @boards.sort_by(&amp;:created_at).reverse</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="32" data-linenumber="9">
+        <li class="covered" data-hits="32" data-linenumber="10">
           <span class="hits">32</span>
           
           <code class="ruby">    @board = Board.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
+        <li class="covered" data-hits="3" data-linenumber="14">
           <span class="hits">3</span>
           
           <code class="ruby">    @board = Board.new</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="14">
+        <li class="covered" data-hits="3" data-linenumber="15">
           <span class="hits">3</span>
           
           <code class="ruby">    @tickets = @board.tickets</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="18">
+        <li class="covered" data-hits="3" data-linenumber="19">
           <span class="hits">3</span>
           
           <code class="ruby">    @board = Board.new(board_params)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="19">
+        <li class="covered" data-hits="3" data-linenumber="20">
           <span class="hits">3</span>
           
           <code class="ruby">    if @board.save</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to boards_path #board_path(@board)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
+        <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
           <code class="ruby">      flash.now[:errors] = @board.errors.full_messages.join(&quot;, &quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
+        <li class="covered" data-hits="2" data-linenumber="24">
           <span class="hits">2</span>
           
           <code class="ruby">      render :new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">    @board.destroy!</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    redirect_to boards_path</code>
+          <code class="ruby">    @board.destroy!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    redirect_to boards_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -715,6 +715,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">end</code>
@@ -1585,6 +1591,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -3370,9 +3382,9 @@
   </pre>
 </div>
       
-        <div class="source_table" id="72576a650348c2599c59f56eca1a4f75d8b08367">
+        <div class="source_table" id="64eb7af6bf248cf518dd22865a3e825e2ef577ec">
   <div class="header">
-    <h3>spec/features/boards_controller_spec.rb</h3>
+    <h3>spec/features/boards_spec.rb</h3>
     <h4><span class="red">74.47 %</span> covered</h4>
     <div>
       <b>47</b> relevant lines. 
@@ -3801,22 +3813,28 @@
         <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to_not have_content(&#39;Board title #1&#39;)</code>
+          <code class="ruby">    expect(page).to_not have_content(&#39;Board title #2&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content(&#39;Board title #2&#39;)</code>
+          <code class="ruby">    expect(page).to have_content(&#39;Board title #1&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    #boards displayed in descending order</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">end</code>
@@ -3826,9 +3844,9 @@
   </pre>
 </div>
       
-        <div class="source_table" id="3e78c9dc263ad186f57f9840e79d9d70b245ef70">
+        <div class="source_table" id="e505d106750c63d4649b143e57455ab6342d3385">
   <div class="header">
-    <h3>spec/features/tickets_controller_spec.rb</h3>
+    <h3>spec/features/tickets_spec.rb</h3>
     <h4><span class="green">93.33 %</span> covered</h4>
     <div>
       <b>120</b> relevant lines. 

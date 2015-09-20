@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all
+    @desc_boards = @boards.sort_by(&:created_at).reverse
   end
 
   def show
@@ -29,7 +30,6 @@ class BoardsController < ApplicationController
     redirect_to boards_path
   end
 
-
   private
 
   def board_params
@@ -39,4 +39,5 @@ class BoardsController < ApplicationController
   def set_board
     @board = Board.find(params[:id])
   end
+
 end

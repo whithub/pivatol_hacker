@@ -6,13 +6,15 @@
   <div class="row existing-boards">
     <div class="col-md-12">
       <h2 class="page-title">Existing Boards</h2>
+      <hr>
     </div>
-    <div class="col-md-6">
-      <% @boards.each do |board| %>
+    <div class="col-md-12">
+      <% @desc_boards.each do |board| %>
         <ul>
           <%= render partial: 'board', locals: {board: board, title: board.title} %>
           <%#= link_to "Delete", board_path(board), method: :delete %>
         </ul>
+        <hr>
       <% end %>
     </div>
   </div>

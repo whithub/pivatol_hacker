@@ -1,4 +1,16 @@
 <ul>
-  <h3><%= link_to title.capitalize, board_path(board) %></h3> <%= link_to "Delete", board_path(board), method: :delete %>
-  <h4>Created On: <%= board.created_at.strftime('%D') %></h4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col-md-11">
+        <h3><%= link_to title.capitalize, board_path(board) %></h3>
+      </div>
+      <div class="col-md-1">
+        <%= link_to "Delete", board_path(board), method: :delete %>
+      </div>
+
+      <div class="col-md-12">
+        <h4>Created On: <%= board.created_at.strftime('%D') %></h4>
+      </div>
+    </div>
+  </div>
 </ul>
