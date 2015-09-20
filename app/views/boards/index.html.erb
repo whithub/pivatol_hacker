@@ -1,6 +1,8 @@
 <div class="container">
   <div class="jumbotron">
-    <%= link_to "Create A New Board", new_board_path %>
+    <%#= link_to "Create A New Board", new_board_path %>
+
+    <%= render partial: 'form' %>
   </div>
 
   <div class="row existing-boards">

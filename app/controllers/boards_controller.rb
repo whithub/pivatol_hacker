@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all
+    @board = Board.new
     @desc_boards = @boards.sort_by(&:created_at).reverse
   end
 

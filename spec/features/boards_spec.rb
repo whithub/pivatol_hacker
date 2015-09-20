@@ -16,7 +16,7 @@ RSpec.describe BoardsController, type: :feature do
   end
 
   it "can be created" do
-    click_on "Create A New Board"
+    # click_on "Create A New Board"
     fill_in "Board Title", with: "Brand new board!"
     click_on "Create Board"
 
@@ -25,7 +25,7 @@ RSpec.describe BoardsController, type: :feature do
   end
 
   it "cannot be created without a title" do
-    click_on "Create A New Board"
+    # click_on "Create A New Board"
     fill_in "Board Title", with: ""
     click_on "Create Board"
 
@@ -35,7 +35,7 @@ RSpec.describe BoardsController, type: :feature do
   end
 
   it "cannot be created with a duplicate title" do
-    click_on "Create A New Board"
+    # click_on "Create A New Board"
     fill_in "Board Title", with: "Board title #1"
     click_on "Create Board"
 
@@ -64,7 +64,7 @@ RSpec.describe BoardsController, type: :feature do
   end
 
   it "can be deleted" do
-    first(:link, "Delete").click
+    first(:button, "Delete").click
 
     expect(current_path).to eq('/boards')
     expect(page).to_not have_content('Board title #2')
