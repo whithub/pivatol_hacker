@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.jumbotron .row {
+  margin-top: -20px;
+
+  .form-new-board-heading {
+    text-align: center;
+  }
+}
 
 .existing-boards {
   h2 {

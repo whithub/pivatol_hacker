@@ -1,27 +1,28 @@
 <div class="container">
-  <div class="jumbotron">
-    <%#= link_to "Create A New Board", new_board_path %>
-
-    <%= render partial: 'form' %>
-  </div>
-
-  <div class="row existing-boards">
-    <div class="col-md-12">
-      <h2 class="page-title">Existing Boards</h2>
-      <hr>
+  <div class="header cleafix">
+    <h1 class="text-muted">Pivatol Hacker</h1>
+    <hr>
+    <div class="jumbotron">
+      <%= render partial: 'form' %>
     </div>
-    <div class="board-titles">
-        <% @desc_boards.each do |board| %>
-          <ul>
-            <%= render partial: 'board', locals: {board: board, title: board.title} %>
-            <%#= link_to "Delete", board_path(board), method: :delete %>
-          </ul>
-          <hr>
-        <% end %>
-    </div>
-  </div>
 
-  <footer class="footer">
-    <p>© whithub 2015</p>
-  </footer>
+    <div class="row existing-boards">
+      <div class="col-md-12">
+        <h2 class="page-title">Existing Boards</h2>
+        <hr>
+      </div>
+      <div class="board-titles">
+          <% @desc_boards.each do |board| %>
+            <ul>
+              <%= render partial: 'board', locals: {board: board, title: board.title} %>
+            </ul>
+            <hr>
+          <% end %>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© whithub 2015</p>
+    </footer>
+  </div>
 </div>
