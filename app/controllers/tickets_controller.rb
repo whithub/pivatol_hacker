@@ -46,43 +46,37 @@ class TicketsController < ApplicationController
   def ready
     set_ticket
     @ticket.ready!
-    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now in Current Sprint."
-    # @ticker.status = 'current_print'
+    redirect_to board_path(@board) #, notice: "Ticket '#{@ticket.name}' is now in Current Sprint."
   end
 
   def cancel
     set_ticket
     @ticket.cancel!
-    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' has been cancelled."
+    redirect_to board_path(@board) #, notice: "Ticket '#{@ticket.name}' has been cancelled."
   end
 
   def start
     set_ticket
     @ticket.start!
-    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now In Progress."
-    # if @ticket.save
-    #   redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' has been started."
-    # else
-    #   error
-    # end
+    redirect_to board_path(@board) #, notice: "Ticket '#{@ticket.name}' is now In Progress."
   end
 
   def stop
     set_ticket
     @ticket.stop!
-    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is back in Current Sprint."
+    redirect_to board_path(@board) #, notice: "Ticket '#{@ticket.name}' is back in Current Sprint."
   end
 
   def complete
     set_ticket
     @ticket.complete!
-    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is now Done."
+    redirect_to board_path(@board) #, notice: "Ticket '#{@ticket.name}' is now Done."
   end
 
   def restart
     set_ticket
     @ticket.restart!
-    redirect_to board_path(@board), notice: "Ticket '#{@ticket.name}' is back In Progress."
+    redirect_to board_path(@board) #, notice: "Ticket '#{@ticket.name}' is back In Progress."
   end
 
 

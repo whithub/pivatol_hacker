@@ -10,114 +10,76 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-3" id="backlog">
-          Backlog
-          <hr>
-          <div class="row">
-            <% @board.tickets.backlog.each do |ticket| %>
-                <%= ticket.name %>:
-                <%= ticket.description %>
-                <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-                <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
-
-                <% if ticket.backlog? %>
-                  <%= link_to "Move to Current Sprint", ready_board_ticket_path(@board, ticket) %>
-                <% elsif ticket.current_sprint? %>
-                  <%= link_to "Move Back to Backlog", cancel_board_ticket_path(@board, ticket) %>
-                  <%= link_to "Move to In Progress", start_board_ticket_path(@board, ticket) %>
-                <% elsif ticket.in_progress? %>
-                  <%= link_to "Move Back to Current Sprint", stop_board_ticket_path(@board, ticket) %>
-                  <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
-                <% elsif ticket.done? %>
-                  <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
-                <% end %>
-              <br>
-              <br>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="col-md-3" id="current_sprint">
-          Current Sprint
-          <hr>
-          <div class="row">
-            <% @board.tickets.current_sprint.each do |ticket| %>
-              <%= ticket.name %>:
+      <div class="col-md-3" id="backlog">
+        <h3>Backlog</h3>
+        <hr>
+        <div class="row">
+          <% @board.tickets.backlog.each do |ticket| %>
+              <h4 class="ticket-name"><%= ticket.name %>: </h4>
               <%= ticket.description %>
               <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
               <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
 
-              <% if ticket.backlog? %>
-                <%= link_to "Move to Current Sprint", ready_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.current_sprint? %>
-                <%= link_to "Move Back to Backlog", cancel_board_ticket_path(@board, ticket) %>
-                <%= link_to "Move to In Progress", start_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.in_progress? %>
-                <%= link_to "Move Back to Current Sprint", stop_board_ticket_path(@board, ticket) %>
-                <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.done? %>
-                <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
-              <% end %>
-              <br>
-              <br>
-            <% end %>
-          </div>
+              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+
+            <br>
+            <br>
+          <% end %>
         </div>
+      </div>
 
+      <div class="col-md-3" id="current_sprint">
+        <h3>Current Sprint</h3>
+        <hr>
+        <div class="row">
+          <% @board.tickets.current_sprint.each do |ticket| %>
+            <%= ticket.name %>:
+            <%= ticket.description %>
+            <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+            <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
 
-        <div class="col-md-3" id="in_progress">
-          In Progress
-          <hr>
-          <div class="row">
-            <% @board.tickets.in_progress.each do |ticket| %>
-              <%= ticket.name %>:
-              <%= ticket.description %>
-              <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-              <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+            <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
 
-              <% if ticket.backlog? %>
-                <%= link_to "Move to Current Sprint", ready_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.current_sprint? %>
-                <%= link_to "Move Back to Backlog", cancel_board_ticket_path(@board, ticket) %>
-                <%= link_to "Move to In Progress", start_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.in_progress? %>
-                <%= link_to "Move Back to Current Sprint", stop_board_ticket_path(@board, ticket) %>
-                <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.done? %>
-                <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
-              <% end %>
-              <br>
-              <br>
-            <% end %>
-          </div>
+            <br>
+            <br>
+          <% end %>
         </div>
+      </div>
 
-        <div class="col-md-3" id="done">
-          Done
-          <hr>
-          <div class="row">
-            <% @board.tickets.done.each do |ticket| %>
-              <%= ticket.name %>:
-              <%= ticket.description %>
-              <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-              <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
 
-              <% if ticket.backlog? %>
-                <%= link_to "Move to Current Sprint", ready_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.current_sprint? %>
-                <%= link_to "Move Back to Backlog", cancel_board_ticket_path(@board, ticket) %>
-                <%= link_to "Move to In Progress", start_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.in_progress? %>
-                <%= link_to "Move Back to Current Sprint", stop_board_ticket_path(@board, ticket) %>
-                <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
-              <% elsif ticket.done? %>
-                <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
-              <% end %>
-              <br>
-              <br>
-            <% end %>
-          </div>
+      <div class="col-md-3" id="in_progress">
+        <h3>In Progress</h3>
+        <hr>
+        <div class="row">
+          <% @board.tickets.in_progress.each do |ticket| %>
+            <%= ticket.name %>:
+            <%= ticket.description %>
+            <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+            <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+
+            <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+
+            <br>
+            <br>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-3" id="done">
+        <h3>Done</h3>
+        <hr>
+        <div class="row">
+          <% @board.tickets.done.each do |ticket| %>
+            <%= ticket.name %>:
+            <%= ticket.description %>
+            <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+            <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+
+            <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+
+            <br>
+            <br>
+          <% end %>
         </div>
       </div>
     </div>
