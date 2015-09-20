@@ -1,11 +1,46 @@
 <% if ticket.backlog? %>
-  <%= link_to "Move to Current Sprint", ready_board_ticket_path(@board, ticket) %>
+  <div class="row">
+    <div class="col-md-2">
+      Move:
+    </div>
+    <div class="col-md-10 move">
+      <%= link_to " Current Sprint", ready_board_ticket_path(@board, ticket) %>
+    </div>
+  </div>
 <% elsif ticket.current_sprint? %>
-  <%= link_to "Move Back to Backlog", cancel_board_ticket_path(@board, ticket) %>
-  <%= link_to "Move to In Progress", start_board_ticket_path(@board, ticket) %>
+  <div class="row">
+    <div class="col-md-2">
+      Move:
+    </div>
+    <div class="col-md-5 move">
+      <%= link_to "Backlog", cancel_board_ticket_path(@board, ticket) %>
+    </div>
+    <div class="col-md-5">
+      <%= link_to "In Progress", start_board_ticket_path(@board, ticket) %>
+    </div>
+  </div>
 <% elsif ticket.in_progress? %>
-  <%= link_to "Move Back to Current Sprint", stop_board_ticket_path(@board, ticket) %>
-  <%= link_to "Move to Done", complete_board_ticket_path(@board, ticket) %>
+  <div class="row">
+    <div class="col-md-2">
+      Move:
+    </div>
+
+    <div class="col-md-5 move">
+      <%= link_to "Current Sprint", stop_board_ticket_path(@board, ticket) %>
+    </div>
+
+    <div class="col-md-5 done">
+      <%= link_to "Done", complete_board_ticket_path(@board, ticket) %>
+    </div>
+  </div>
 <% elsif ticket.done? %>
-  <%= link_to "Move Back to In Progress", restart_board_ticket_path(@board, ticket) %>
+  <div class="row">
+    <div class="col-md-2">
+      Move:
+    </div>
+
+    <div class="col-md-10">
+      <%= link_to "In Progress", restart_board_ticket_path(@board, ticket) %>
+    </div>
+  </div>
 <% end %>

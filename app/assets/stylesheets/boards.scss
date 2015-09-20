@@ -31,23 +31,89 @@
 
 
 #new-ticket-form {
-  border: 2px solid red;
+//  border: 2px solid red;
+}
+
+.waffle-board {
+
 }
 
 #backlog {
-  border: 2px solid red;
+  border-right: 2px solid teal;
+//  margin-right: 0.5%;
+
+  .tickets {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding-left: 5%;
+
+    .ticket-ed-links {
+      text-align: center;
+    }
+
+    .move {
+      padding-left: 50px;
+    }
+  }
 }
 
 #current_sprint {
-  border: 2px solid red;
+  border-right: 2px solid teal;
+
+  .tickets {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding-left: 5%;
+
+    .ticket-ed-links {
+      text-align: center;
+    }
+
+    .move {
+      padding-left: 50px;
+    }
+  }
 }
 
 #in_progress {
-  border: 2px solid red;
+  border-right: 2px solid #008080;
+
+  .tickets {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding-left: 5%;
+
+    .ticket-ed-links {
+      text-align: center;
+    }
+
+    .move {
+      width: 134px;
+      padding-left: 30px;
+    }
+
+    .done {
+      width: 34px;
+    }
+  }
 }
 
 #done {
-  border: 2px solid red;
+//  border: 2px solid red;
+
+  .tickets {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding-left: 5%;
+
+    .ticket-ed-links {
+      text-align: center;
+    }
+
+    .move {
+      padding-left: 50px;
+    }
+  }
 }
 
 .footer {

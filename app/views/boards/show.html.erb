@@ -9,19 +9,30 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row waffle-board">
       <div class="col-md-3" id="backlog">
         <h3>Backlog</h3>
         <hr>
         <div class="row">
           <% @board.tickets.backlog.each do |ticket| %>
-              <h4 class="ticket-name"><%= ticket.name %>: </h4>
-              <%= ticket.description %>
-              <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-              <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+            <div class="tickets">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
+                </div>
+                <div class="col-md-8 ticket-ed-links">
+                  <h4>
+                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+                  </h4>
+                </div>
+              </div>
+
+
+              <p><%= ticket.description %></p>
 
               <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
-
+            </div>
             <br>
             <br>
           <% end %>
@@ -33,13 +44,24 @@
         <hr>
         <div class="row">
           <% @board.tickets.current_sprint.each do |ticket| %>
-            <%= ticket.name %>:
-            <%= ticket.description %>
-            <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-            <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+            <div class="tickets">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
+                </div>
+                <div class="col-md-8 ticket-ed-links">
+                  <h4>
+                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+                  </h4>
+                </div>
+              </div>
 
-            <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
 
+              <p><%= ticket.description %></p>
+
+              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+            </div>
             <br>
             <br>
           <% end %>
@@ -52,13 +74,24 @@
         <hr>
         <div class="row">
           <% @board.tickets.in_progress.each do |ticket| %>
-            <%= ticket.name %>:
-            <%= ticket.description %>
-            <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-            <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+            <div class="tickets">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
+                </div>
+                <div class="col-md-8 ticket-ed-links">
+                  <h4>
+                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+                  </h4>
+                </div>
+              </div>
 
-            <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
 
+              <p><%= ticket.description %></p>
+
+              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+            </div>
             <br>
             <br>
           <% end %>
@@ -70,13 +103,23 @@
         <hr>
         <div class="row">
           <% @board.tickets.done.each do |ticket| %>
-            <%= ticket.name %>:
-            <%= ticket.description %>
-            <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-            <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+            <div class="tickets">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
+                </div>
+                <div class="col-md-8 ticket-ed-links">
+                  <h4>
+                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
+                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
+                  </h4>
+                </div>
+              </div>
 
-            <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+              <p><%= ticket.description %></p>
 
+              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
+            </div>
             <br>
             <br>
           <% end %>
