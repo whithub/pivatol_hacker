@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="header cleafix">
+  <div class="header">
           <h1 class="text-muted"><%= @board.title %></h1>
           <hr>
 
@@ -8,6 +8,8 @@
             <%= render partial: 'ticket_form' %>
       </div>
     </div>
+  </div>
+</div>
 
     <div class="row waffle-board">
       <div class="col-md-3" id="backlog">
@@ -28,12 +30,10 @@
                 </div>
               </div>
 
-
-              <p><%= ticket.description %></p>
+                <p>Description: <%= ticket.description %></p>
 
               <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
             <br>
           <% end %>
         </div>
@@ -58,11 +58,10 @@
               </div>
 
 
-              <p><%= ticket.description %></p>
+              <p>Description: <%= ticket.description %></p>
 
               <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
             <br>
           <% end %>
         </div>
@@ -88,11 +87,10 @@
               </div>
 
 
-              <p><%= ticket.description %></p>
+              <p>Description: <%= ticket.description %></p>
 
               <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
             <br>
           <% end %>
         </div>
@@ -116,15 +114,19 @@
                 </div>
               </div>
 
-              <p><%= ticket.description %></p>
+              <p>Description: <%= ticket.description %></p>
 
               <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
             <br>
           <% end %>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  <!--</div>-->
+<!--</div>-->
+<hr>
+
+<footer class="footer">
+  <p>© whithub 2015</p>
+</footer>

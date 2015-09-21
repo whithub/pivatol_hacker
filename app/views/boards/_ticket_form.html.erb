@@ -2,7 +2,7 @@
   <div class="col-md-3"></div>
 
   <div class="col-md-6">
-    <form class="form-new-ticket">
+    <div class="form-new-ticket">
       <h2 class="form-new-ticket-heading">Create a New Ticket</h2>
 
       <%= form_for [@board, Ticket.new], url: board_tickets_path(@board), method: :post do |f| %>
@@ -25,7 +25,7 @@
         <%= f.submit "Create Ticket", class: "btn btn-md btn-primary btn-block" %>
       <% end %>
 
-    </form>
+    </div>
   </div>
 
   <div class="col-md-3"></div>

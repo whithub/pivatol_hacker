@@ -20,7 +20,7 @@ class TicketsController < ApplicationController
     @ticket = @board.tickets.new(ticket_params)
 
     if @ticket.save
-      redirect_to board_path(@board), notice: "Ticket Created"
+      redirect_to board_path(@board) #, notice: "Ticket Created"
     else
       redirect_to board_path(@board), notice: @ticket.errors.full_messages.join(", ")
     end
@@ -33,7 +33,7 @@ class TicketsController < ApplicationController
     if @ticket.update_attributes(ticket_params)
       redirect_to board_path(@board), notice: 'Ticket was successfully updated.'
     else
-      flash.now[:errors] = @idea.errors.full_messages.join(", ")
+      flash.now[:errors] = @ticket.errors.full_messages.join(", ")
       render :edit
     end
   end

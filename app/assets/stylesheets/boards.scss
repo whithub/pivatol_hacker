@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .jumbotron .row {
   margin-top: -20px;
 
@@ -35,20 +36,44 @@
 }
 
 .waffle-board {
+  padding: 0 5% 0 5%;
 
+  h3 {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+img.left-arrow {
+  height: 30px;
+  width: 20px;
 }
 
 #backlog {
-  border-right: 2px solid teal;
-//  margin-right: 0.5%;
+  border-left: 2px solid #337ab7;
+  border-right: 2px solid #337ab7;
+  min-height: 800px;
 
   .tickets {
-    background-color: lightgrey;
+    background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
 
-    .ticket-ed-links {
-      text-align: center;
+    h4.ticket-name {
+      font-size: 21px;
+    }
+
+    .ticket-ed-links h4 {
+      text-align: right;
+
+      a {
+        padding: 0 10px 0 5px;
+        font-size: 15px;
+      }
+    }
+
+    p {
+      font-size: 15px;
     }
 
     .move {
@@ -58,15 +83,29 @@
 }
 
 #current_sprint {
-  border-right: 2px solid teal;
+  border-right: 2px solid #337ab7;
+  min-height: 800px;
 
   .tickets {
-    background-color: lightgrey;
+    background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
 
-    .ticket-ed-links {
-      text-align: center;
+    h4.ticket-name {
+      font-size: 21px;
+    }
+
+    .ticket-ed-links h4 {
+      text-align: right;
+
+      a {
+        padding: 0 10px 0 5px;
+        font-size: 15px;
+      }
+    }
+
+    p {
+      font-size: 15px;
     }
 
     .move {
@@ -76,15 +115,29 @@
 }
 
 #in_progress {
-  border-right: 2px solid #008080;
+  border-right: 2px solid #337ab7;
+  min-height: 800px;
 
   .tickets {
-    background-color: lightgrey;
+    background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
 
-    .ticket-ed-links {
-      text-align: center;
+    h4.ticket-name {
+      font-size: 21px;
+    }
+
+    .ticket-ed-links h4 {
+      text-align: right;
+
+      a {
+        padding: 0 10px 0 5px;
+        font-size: 15px;
+      }
+    }
+
+    p {
+      font-size: 15px;
     }
 
     .move {
@@ -99,15 +152,33 @@
 }
 
 #done {
-//  border: 2px solid red;
+  border-right: 2px solid #337ab7;
+  min-height: 800px;
 
   .tickets {
-    background-color: lightgrey;
+    background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
 
-    .ticket-ed-links {
-      text-align: center;
+    h4.ticket-name {
+      font-size: 21px;
+    }
+
+    .ticket-name {
+      font-size: 22px;
+    }
+
+    .ticket-ed-links h4 {
+      text-align: right;
+
+      a {
+        padding: 0 10px 0 5px;
+        font-size: 15px;
+      }
+    }
+
+    p {
+      font-size: 15px;
     }
 
     .move {

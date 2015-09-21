@@ -72,7 +72,7 @@ RSpec.describe TicketsController, type: :feature do
     #expect it's location to be in backlog column...find ticket, grab its status...
   end
 
-  xit "can have any status when created" do
+  it "can have any status when created" do
     click_on "Board-one"
     fill_in "Ticket Name", with: "Ticket Name #3"
     fill_in "Ticket Description", with: "Description of what this ticket entails"
@@ -89,7 +89,7 @@ RSpec.describe TicketsController, type: :feature do
     click_on "Board-one"
     first(:link, "Edit").click
 
-    expect(page).to have_content("Edit Ticket:")
+    expect(page).to have_content("Edit Ticket")
 
     # expect(page).to have_field('Ticket Name', text: 'Title Name #1')
     # find_field('Ticket Name').value.should eq('Title Name #1')
