@@ -54,13 +54,24 @@ img.left-arrow {
   border-right: 2px solid #337ab7;
   min-height: 800px;
 
+  .sortable {
+    margin-right: 40px;
+  }
+
   .tickets {
     background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
+    border: 2px solid grey;
+    list-style: none;
 
     h4.ticket-name {
       font-size: 21px;
+    }
+
+    .backlog-ticket{
+      padding: 8% 8% 8% 0;
+      text-align: center;
     }
 
     .ticket-ed-links h4 {
@@ -82,17 +93,28 @@ img.left-arrow {
   }
 }
 
-#current_sprint {
+#current-sprint-column {
   border-right: 2px solid #337ab7;
   min-height: 800px;
+
+  .sortable {
+    margin-right: 40px;
+  }
 
   .tickets {
     background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
+    border: 2px solid grey;
+    list-style: none;
 
     h4.ticket-name {
       font-size: 21px;
+    }
+
+    .sprint-ticket{
+      padding: 8% 8% 8% 0;
+      text-align: center;
     }
 
     .ticket-ed-links h4 {
@@ -118,13 +140,24 @@ img.left-arrow {
   border-right: 2px solid #337ab7;
   min-height: 800px;
 
+  .sortable {
+    margin-right: 40px;
+  }
+
   .tickets {
     background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
+    border: 2px solid grey;
+    list-style: none;
 
     h4.ticket-name {
       font-size: 21px;
+    }
+
+    .progress-ticket {
+      padding: 8% 8% 8% 0;
+      text-align: center;
     }
 
     .ticket-ed-links h4 {
@@ -155,13 +188,24 @@ img.left-arrow {
   border-right: 2px solid #337ab7;
   min-height: 800px;
 
+  .sortable {
+    margin-right: 40px;
+  }
+
   .tickets {
     background-color: #EEEEEE;
     border-radius: 5px;
     padding-left: 5%;
+    border: 2px solid grey;
+    list-style: none;
 
     h4.ticket-name {
       font-size: 21px;
+    }
+
+    .done-ticket{
+      padding: 8% 8% 8% 0;
+      text-align: center;
     }
 
     .ticket-name {

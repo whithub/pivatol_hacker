@@ -1,0 +1,28 @@
+<%= @ticket.name %>
+
+<%= @ticket.description %>
+
+<%= link_to "Edit", edit_board_ticket_path(@board, @ticket) %>
+
+<%= link_to "Delete", board_ticket_path(@board, @ticket), method: :delete %>
+
+
+  <!--<div class="tickets" id="draggable-backlog-tickets" draggable="true">-->
+  <!--<div class="row">-->
+  <!--<div class="col-md-4">-->
+  <!--<h4 class="ticket-name"><%#= ticket.name %>: </h4>-->
+  <!--</div>-->
+  <!---->
+  <!--<div class="col-md-8 ticket-ed-links">-->
+  <!--<h4>-->
+  <!--<%#= link_to "Edit", edit_board_ticket_path(@board, ticket) %>-->
+  <!--<%#= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>-->
+  <!--</h4>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!---->
+  <!--<p>Description: <%#= ticket.description %></p>-->
+  <!---->
+  <!--<%#= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>-->
+  <!--</div>-->
+  <!--<br>-->

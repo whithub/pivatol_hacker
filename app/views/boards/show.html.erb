@@ -15,114 +15,90 @@
       <div class="col-md-3" id="backlog">
         <h3>Backlog</h3>
         <hr>
-        <div class="row">
+        <ul class="sortable">
           <% @board.tickets.backlog.each do |ticket| %>
             <div class="tickets">
               <div class="row">
-                <div class="col-md-4">
-                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
-                </div>
-                <div class="col-md-8 ticket-ed-links">
-                  <h4>
-                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
-                  </h4>
+                <div class="col-md-12 backlog-ticket">
+                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
                 </div>
               </div>
-
-                <p>Description: <%= ticket.description %></p>
-
-              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
           <% end %>
-        </div>
+        </ul>
+        <script src="jquery.sortable.js"></script>
+        <script>
+          $('.sortable').sortable();
+        </script>
       </div>
 
-      <div class="col-md-3" id="current_sprint">
+      <div class="col-md-3" id="current-sprint-column">
         <h3>Current Sprint</h3>
         <hr>
-        <div class="row">
+        <ul class="sortable">
           <% @board.tickets.current_sprint.each do |ticket| %>
             <div class="tickets">
               <div class="row">
-                <div class="col-md-4">
-                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
-                </div>
-                <div class="col-md-8 ticket-ed-links">
-                  <h4>
-                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
-                  </h4>
+                <div class="col-md-12 sprint-ticket">
+                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
                 </div>
               </div>
-
-
-              <p>Description: <%= ticket.description %></p>
-
-              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
           <% end %>
-        </div>
+        </ul>
+        <script src="jquery.sortable.js"></script>
+        <script>
+          $('.sortable').sortable();
+        </script>
       </div>
 
 
       <div class="col-md-3" id="in_progress">
         <h3>In Progress</h3>
         <hr>
-        <div class="row">
+        <ul class="sortable">
           <% @board.tickets.in_progress.each do |ticket| %>
             <div class="tickets">
               <div class="row">
-                <div class="col-md-4">
-                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
-                </div>
-                <div class="col-md-8 ticket-ed-links">
-                  <h4>
-                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
-                  </h4>
+                <div class="col-md-12 progress-ticket">
+                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
                 </div>
               </div>
-
-
-              <p>Description: <%= ticket.description %></p>
-
-              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
           <% end %>
-        </div>
+        </ul>
+        <script src="jquery.sortable.js"></script>
+        <script>
+          $('.sortable').sortable();
+        </script>
       </div>
 
       <div class="col-md-3" id="done">
         <h3>Done</h3>
         <hr>
-        <div class="row">
+        <ul class="sortable">
           <% @board.tickets.done.each do |ticket| %>
             <div class="tickets">
               <div class="row">
-                <div class="col-md-4">
-                  <h4 class="ticket-name"><%= ticket.name %>: </h4>
-                </div>
-                <div class="col-md-8 ticket-ed-links">
-                  <h4>
-                    <%= link_to "Edit", edit_board_ticket_path(@board, ticket) %>
-                    <%= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>
-                  </h4>
+                <div class="col-md-12 done-ticket">
+                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
                 </div>
               </div>
-
-              <p>Description: <%= ticket.description %></p>
-
-              <%= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>
             </div>
-            <br>
           <% end %>
-        </div>
+        </ul>
+        <script src="jquery.sortable.js"></script>
+        <script>
+          $('.sortable').sortable();
+        </script>
       </div>
     </div>
+
+
+<script src="jquery.sortable.js"></script>
+<script>
+  $('.sortable').sortable();
+</script>
   <!--</div>-->
 <!--</div>-->
 <hr>

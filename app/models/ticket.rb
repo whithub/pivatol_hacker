@@ -4,7 +4,6 @@ class Ticket < ActiveRecord::Base
 
   belongs_to :board
 
-  # enum status: %w(backlog current_sprint in_progress done)   #[:backlog, :current_sprint, :in_progress, :done]
   enum status: { backlog: 0, current_sprint: 1, in_progress: 2, done: 3 }
 
 
