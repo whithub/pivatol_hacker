@@ -12,18 +12,3 @@ html {
 }
 
 
-#drop-target-one, #dd-files, #dd-images {
-  border: 5px dashed #d9d9d9;
-  border-radius: 10px;
-  padding: 5em 2em;
-  text-align: center;
-}
-
-#drag-elements li {
-  display: inline-block;
-  padding: .5em 1em;
-  margin: 0 1em 1em 0;
-  border: 1px solid #d9d9d9;
-  background: #f7f7f7;
-  border-radius: 3px;
-}

@@ -2,3 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.ticket-crud-links {
+  position: right;
+
+  a {
+    padding: 8px 12px 8px 12px ;
+    font-size: 15px;
+  }
+}

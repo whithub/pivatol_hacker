@@ -14,12 +14,14 @@
 
   <div class=" col-md-8 jumbotron">
     <div class="col-md-11">
-      <h3>Description: <%= @ticket.description %></h3>
+      <h2>Description: </h2><h4><%= @ticket.description %></h4>
     </div>
 
-    <div class="col-md-1">
-      <%= link_to "Edit", edit_board_ticket_path(@board, @ticket), class: 'btn' %><br>
-      <%= link_to "Delete", board_ticket_path(@board, @ticket), method: :delete %>
+    <div class="col-md-1 ticket-crud-links">
+      <%= link_to "Edit", edit_board_ticket_path(@board, @ticket), class: 'btn btn-primary' %>
+      <br>
+      <br>
+      <%= link_to "Delete", board_ticket_path(@board, @ticket), method: :delete, class: 'btn btn-primary' %>
     </div>
   </div>
 

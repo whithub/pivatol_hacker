@@ -16,7 +16,7 @@
           <div class="tickets">
             <div class="row">
               <div class="col-md-12 backlog-ticket">
-                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
+                <li data-id="<%= ticket.id %>"><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@
           <div class="tickets">
             <div class="row">
               <div class="col-md-12 sprint-ticket">
-                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
+                <li data-id="<%= ticket.id %>"><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
           <div class="tickets">
             <div class="row">
               <div class="col-md-12 progress-ticket">
-                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
+                <li data-id="<%= ticket.id %>"><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
           <div class="tickets">
             <div class="row">
               <div class="col-md-12 done-ticket">
-                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
+                <li data-id="<%= ticket.id %>"><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
               </div>
             </div>
           </div>
@@ -93,7 +93,17 @@
 //          $('.sortable1').sortable();
         $('.sortable1, .sortable2, .sortable3, .sortable4').sortable({
           connectWith: '.connected'
-        });
+        }).bind('sortupdate', function(e, ui) {
+          console.log('updated');
+
+          $.ajax({
+            type: "GET",
+            url: '/tasks/sort',
+            data: { order: updated_order }
+          });
+          //ui.item contains the current dragged element.
+          //Triggered when the user stopped sorting and the DOM position has changed.
+        });;
       </script>
     </div>
   </div>
