@@ -4,12 +4,16 @@
 
 
 .home-page-image {
-//  background: image-url('desktop_1.jpg') no-repeat center;
-  border: 2px solid red;
+  background: image-url('desktop_1.jpg') no-repeat center;
+  background-size: 100%;
+  min-height: 1000px;
+
+//  border: 2px solid red;
 
   h1 {
     text-align: center;
-    margin: 10%;
+    padding-top: 22%;
+    color: white;
   }
 
   h3 {
@@ -19,6 +23,7 @@
     .btn {
       padding: 14px 24px;
       font-size: 21px;
+      color: white;
     }
   }
 

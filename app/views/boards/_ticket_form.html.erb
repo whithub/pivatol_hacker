@@ -13,7 +13,7 @@
         <%= f.text_area :description, placeholder: "Ticket Description", class: "form-control"  %><br>
 
         <div id="ticket-status-dropdown" >
-          <%= f.label :status %>
+          <%= f.label :status, "Status" %>
           <%= f.select :status, [['Backlog', :backlog],
               ['Current Sprint', :current_sprint],
               ['In Progress', :in_progress],
