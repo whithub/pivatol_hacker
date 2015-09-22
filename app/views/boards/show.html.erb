@@ -1,111 +1,113 @@
 <div class="container">
-  <div class="header">
-          <h1 class="text-muted"><%= @board.title %></h1>
-          <hr>
+  <div class="col-md-12 header">
+    <h1 class="col-md-11 text-muted"><%= @board.title %></h1>
 
-    <div class="row">
-      <div class="jumbotron" id="new-ticket-form">
-            <%= render partial: 'ticket_form' %>
-      </div>
-    </div>
+    <h3><a class="col-md-1 btn btn-sm home-page-button" href="/boards" role="button">Home Page</a></h3>
   </div>
 </div>
+<hr>
 
-    <div class="row waffle-board">
-      <div class="col-md-3" id="backlog">
-        <h3>Backlog</h3>
-        <hr>
-        <ul class="sortable1">
-          <% @board.tickets.backlog.each do |ticket| %>
-            <div class="tickets">
-              <div class="row">
-                <div class="col-md-12 backlog-ticket">
-                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
-                </div>
+  <div class="row waffle-board">
+    <div class="col-md-3" id="backlog">
+      <h3>Backlog</h3>
+      <hr>
+      <ul class="sortable1">
+        <% @board.tickets.backlog.each do |ticket| %>
+          <div class="tickets">
+            <div class="row">
+              <div class="col-md-12 backlog-ticket">
+                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
               </div>
             </div>
-          <% end %>
-        </ul>
+          </div>
+        <% end %>
+      </ul>
 
-        <br>
-        <br>
-        <br>
+      <br>
+      <br>
+      <br>
 
-        <script src="jquery.sortable.js"></script>
-        <script>
-          $('.sortable').sortable();
-        </script>
-      </div>
+      <script src="jquery.sortable.js"></script>
+      <script>
+        $('.sortable').sortable();
+      </script>
+    </div>
 
-      <div class="col-md-3" id="current-sprint-column">
-        <h3>Current Sprint</h3>
-        <hr>
-        <ul class="sortable2">
-          <% @board.tickets.current_sprint.each do |ticket| %>
-            <div class="tickets">
-              <div class="row">
-                <div class="col-md-12 sprint-ticket">
-                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
-                </div>
+    <div class="col-md-3" id="current-sprint-column">
+      <h3>Current Sprint</h3>
+      <hr>
+      <ul class="sortable2">
+        <% @board.tickets.current_sprint.each do |ticket| %>
+          <div class="tickets">
+            <div class="row">
+              <div class="col-md-12 sprint-ticket">
+                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
               </div>
             </div>
-          <% end %>
-        </ul>
-        <script src="jquery.sortable.js"></script>
-        <script>
-          $('.sortable').sortable();
-        </script>
-      </div>
-
-
-      <div class="col-md-3" id="in_progress">
-        <h3>In Progress</h3>
-        <hr>
-        <ul class="sortable3">
-          <% @board.tickets.in_progress.each do |ticket| %>
-            <div class="tickets">
-              <div class="row">
-                <div class="col-md-12 progress-ticket">
-                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </ul>
-        <script src="jquery.sortable.js"></script>
-        <script>
-          $('.sortable').sortable();
-        </script>
-      </div>
-
-      <div class="col-md-3" id="done">
-        <h3>Done</h3>
-        <hr>
-        <ul class="sortable4">
-          <% @board.tickets.done.each do |ticket| %>
-            <div class="tickets">
-              <div class="row">
-                <div class="col-md-12 done-ticket">
-                  <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </ul>
-        <script src="jquery.sortable.js"></script>
-        <script>
-//          $('.sortable1').sortable();
-          $('.sortable1, .sortable2, .sortable3, .sortable4').sortable({
-            connectWith: '.connected'
-          });
-        </script>
-      </div>
+          </div>
+        <% end %>
+      </ul>
+      <script src="jquery.sortable.js"></script>
+      <script>
+        $('.sortable').sortable();
+      </script>
     </div>
 
 
-  <!--</div>-->
-<!--</div>-->
-<hr>
+    <div class="col-md-3" id="in_progress">
+      <h3>In Progress</h3>
+      <hr>
+      <ul class="sortable3">
+        <% @board.tickets.in_progress.each do |ticket| %>
+          <div class="tickets">
+            <div class="row">
+              <div class="col-md-12 progress-ticket">
+                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+      <script src="jquery.sortable.js"></script>
+      <script>
+        $('.sortable').sortable();
+      </script>
+    </div>
+
+    <div class="col-md-3" id="done">
+      <h3>Done</h3>
+      <hr>
+      <ul class="sortable4">
+        <% @board.tickets.done.each do |ticket| %>
+          <div class="tickets">
+            <div class="row">
+              <div class="col-md-12 done-ticket">
+                <li><h4 class="ticket-name"><%= link_to ticket.name, board_ticket_path(@board, ticket) %></h4></li>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+      <script src="jquery.sortable.js"></script>
+      <script>
+//          $('.sortable1').sortable();
+        $('.sortable1, .sortable2, .sortable3, .sortable4').sortable({
+          connectWith: '.connected'
+        });
+      </script>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="jumbotron" id="new-ticket-form">
+      <%= render partial: 'ticket_form' %>
+    </div>
+  </div>
+
+ <hr>
 
 <footer class="footer">
   <p>© whithub 2015</p>

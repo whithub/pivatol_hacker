@@ -30,10 +30,10 @@
   }
 }
 
-
-#new-ticket-form {
-//  border: 2px solid red;
+.home-page-button {
+  font-size: 15px;
 }
+
 
 .waffle-board {
   padding: 0 5% 0 5%;
@@ -44,18 +44,14 @@
   }
 }
 
-img.left-arrow {
-  height: 30px;
-  width: 20px;
-}
 
 #backlog {
   border-left: 2px solid #337ab7;
   border-right: 2px solid #337ab7;
-  min-height: 800px;
+  min-height: 500px;
 
-  .sortable {
-    margin-right: 40px;
+  .sortable1 {
+    margin-right: 12%;
   }
 
   .tickets {
@@ -95,10 +91,10 @@ img.left-arrow {
 
 #current-sprint-column {
   border-right: 2px solid #337ab7;
-  min-height: 800px;
+  min-height: 500px;
 
-  .sortable {
-    margin-right: 40px;
+  .sortable2 {
+    margin-right: 12%;
   }
 
   .tickets {
@@ -138,10 +134,10 @@ img.left-arrow {
 
 #in_progress {
   border-right: 2px solid #337ab7;
-  min-height: 800px;
+  min-height: 500px;
 
-  .sortable {
-    margin-right: 40px;
+  .sortable3 {
+    margin-right: 12%;
   }
 
   .tickets {
@@ -186,10 +182,10 @@ img.left-arrow {
 
 #done {
   border-right: 2px solid #337ab7;
-  min-height: 800px;
+  min-height: 500px;
 
-  .sortable {
-    margin-right: 40px;
+  .sortable4 {
+    margin-right: 12%;
   }
 
   .tickets {
