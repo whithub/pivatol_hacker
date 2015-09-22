@@ -1,28 +1,38 @@
-<%= @ticket.name %>
+<div class="container">
+  <div class="col-md-12 header">
+    <h1 class="col-md-10 text-muted"><%= @ticket.name %></h1>
 
-<%= @ticket.description %>
+    <h3><a class="col-md-2 btn btn-sm home-page-button" href=<%= "/boards/#{@board.id}" %>, role="button" > Return to Board</a></h3>
+    <!--<h3 class="col-md-2"><%= button_to "Return to Board", board_path(@board), method: :get %></h3>-->
 
-<%= link_to "Edit", edit_board_ticket_path(@board, @ticket) %>
+    <hr>
+  </div>
+</div>
 
-<%= link_to "Delete", board_ticket_path(@board, @ticket), method: :delete %>
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class=" col-md-8 jumbotron">
+    <div class="col-md-11">
+      <h3>Description: <%= @ticket.description %></h3>
+    </div>
+
+    <div class="col-md-1">
+      <%= link_to "Edit", edit_board_ticket_path(@board, @ticket), class: 'btn' %><br>
+      <%= link_to "Delete", board_ticket_path(@board, @ticket), method: :delete %>
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>
 
 
-  <!--<div class="tickets" id="draggable-backlog-tickets" draggable="true">-->
-  <!--<div class="row">-->
-  <!--<div class="col-md-4">-->
-  <!--<h4 class="ticket-name"><%#= ticket.name %>: </h4>-->
-  <!--</div>-->
-  <!---->
-  <!--<div class="col-md-8 ticket-ed-links">-->
-  <!--<h4>-->
-  <!--<%#= link_to "Edit", edit_board_ticket_path(@board, ticket) %>-->
-  <!--<%#= link_to "Delete", board_ticket_path(@board, ticket), method: :delete %>-->
-  <!--</h4>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!---->
-  <!--<p>Description: <%#= ticket.description %></p>-->
-  <!---->
-  <!--<%#= render partial: 'status_check', locals: { board: @board, ticket: ticket } %>-->
-  <!--</div>-->
-  <!--<br>-->
+<div class="row">
+  <hr>
+  <footer class="footer">
+    <p>© whithub 2015</p>
+  </footer>
+</div>
+
+
+
