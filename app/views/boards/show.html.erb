@@ -15,7 +15,7 @@
       <div class="col-md-3" id="backlog">
         <h3>Backlog</h3>
         <hr>
-        <ul class="sortable">
+        <ul class="sortable1">
           <% @board.tickets.backlog.each do |ticket| %>
             <div class="tickets">
               <div class="row">
@@ -26,6 +26,11 @@
             </div>
           <% end %>
         </ul>
+
+        <br>
+        <br>
+        <br>
+
         <script src="jquery.sortable.js"></script>
         <script>
           $('.sortable').sortable();
@@ -35,7 +40,7 @@
       <div class="col-md-3" id="current-sprint-column">
         <h3>Current Sprint</h3>
         <hr>
-        <ul class="sortable">
+        <ul class="sortable2">
           <% @board.tickets.current_sprint.each do |ticket| %>
             <div class="tickets">
               <div class="row">
@@ -56,7 +61,7 @@
       <div class="col-md-3" id="in_progress">
         <h3>In Progress</h3>
         <hr>
-        <ul class="sortable">
+        <ul class="sortable3">
           <% @board.tickets.in_progress.each do |ticket| %>
             <div class="tickets">
               <div class="row">
@@ -76,7 +81,7 @@
       <div class="col-md-3" id="done">
         <h3>Done</h3>
         <hr>
-        <ul class="sortable">
+        <ul class="sortable4">
           <% @board.tickets.done.each do |ticket| %>
             <div class="tickets">
               <div class="row">
@@ -89,16 +94,15 @@
         </ul>
         <script src="jquery.sortable.js"></script>
         <script>
-          $('.sortable').sortable();
+//          $('.sortable1').sortable();
+          $('.sortable1, .sortable2, .sortable3, .sortable4').sortable({
+            connectWith: '.connected'
+          });
         </script>
       </div>
     </div>
 
 
-<script src="jquery.sortable.js"></script>
-<script>
-  $('.sortable').sortable();
-</script>
   <!--</div>-->
 <!--</div>-->
 <hr>

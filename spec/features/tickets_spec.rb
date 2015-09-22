@@ -32,7 +32,7 @@ RSpec.describe TicketsController, type: :feature do
 
     click_on "Brand new ticket!"
     expect(page).to have_content('Description of what this ticket entails')
-    
+
   end
 
   it "cannot be created without a title" do
